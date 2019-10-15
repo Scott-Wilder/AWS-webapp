@@ -1,0 +1,61 @@
+<! DOCTYPE html>
+<html lang="en">
+
+<!-- HEADER -->
+<head>
+	<title>Sign Up</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+	<link rel="stylesheet" href="stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com./ajx/libs/jquery/3.2.1/jqueury.min.js"></script>
+	<script src="https://use.fontawesome.com/117b159e2e.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+	<nav class="navbar navbar-inverse" style="margin-bottom:0;">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">ScottsHub</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li><a href="http://54.201.229.49/FirstServlet3/Home_Page.html">Home</a></li>
+		  <li><a href="http://54.201.229.49/FirstServlet3/Scott Wilder resume 2017.pdf">Resume</a></li>
+		  <li><a href="http://54.201.229.49/FirstServlet3/Fishing.jsp">Fishing</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li class="active"><a href="http://54.201.229.49/FirstServlet3/Sign_up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		</ul>
+	  </div>
+	</nav>
+	
+<!-- Sign Up Form -->
+	<div class="container" style="padding-top:10px;">
+		<h3><strong> Create your profile: </strong></h3>
+			<form action="http://54.201.229.49/FirstServlet3/signup" method="post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" class="form-control" name="name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email address:</label>
+					<input type="text" class="form-control" name="email">
+				</div>
+				<div class="form-group">
+					<label for="password">Password:</label>
+					<input type="password" class="form-control" name="password">
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox"> Remember me</label>
+				</div>
+				<button type="submit" class="btn btn-default">Register</button>
+			</form>
+		</div>
+		
+		
+	

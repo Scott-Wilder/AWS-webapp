@@ -1,0 +1,4 @@
+DB: website
+1) CREATE DATABASE Website;
+2)USE Website;
+3) CREATE TABLE Profile(Name VARCHAR(30), Email VARCHAR(30), Password VARCHAR(30), Comment TEXT, Topic VARCHAR(250)); 

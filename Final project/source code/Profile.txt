@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" session="false"%>
+<%@ include file="ProfileHeader.html" %>
+<%@ page import ="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Profile</title>
+</head>
+<body>
+
+<%
+HttpSession session=request.getSession();
+if(session.getAttribute("uname") == null){
+	String redirectURL = "http://54.201.229.49/FirstServlet3/login.jsp";
+	response.sendRedirect(redirectURL);
+}
+String name =(String)session.getAttribute("uname");
+String email =(String)session.getAttribute("uemail");
+String password =(String)session.getAttribute("upass");
+
+
+%>
+
+<div class="container" style="padding-top:10px;">
+		<h3><strong><u> Profile </u></strong></h3>
+		<h3> Name: <%out.print(name);%> </h3>
+		<h3> Email: <%out.print(email);%> </h3>
+		<h3> Password: <%out.print(password);%> </h3>
+		<form action="http://54.201.229.49/FirstServlet3/Logout.jsp" method="post">
+			<button name="button" value="ok" type="submit">Log Out</button>
+		</form>
+		<form action="http://54.201.229.49/FirstServlet3/Edit.jsp" method="post">
+			<button name="button" value="ok" type="submit">Edit Profile</button>
+		</form>
+		
+		
+		
+</div>
+
+
+
+
+		
+
+</body>
+</html>

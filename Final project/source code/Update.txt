@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Update</title>
+</head>
+<body>
+<%
+String name = request.getParameter("name");
+HttpSession session1=request.getSession();  
+String checkname = (String)session1.getAttribute("uname");
+String email = request.getParameter("email");
+String password = request.getParameter("password");
+try{
+	Connection conn = null;
+	String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	String DB_URL = "jdbc:mysql://localhost:3306/Website";
+	String USER = "root";
+	String PASS = "";
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	System.out.println("Connecting to database...");
+	conn =  DriverManager.getConnection(DB_URL,USER,PASS);
+    Statement st=null;
+    st=conn.createStatement();
+    st.executeUpdate("UPDATE profile SET Name='"+name+"',Email='"+email+"',Password='"+password+"' WHERE Name='"+checkname+"'");
+    System.out.println(st);
+     
+    session1.setAttribute("uname",name);
+    session1.setAttribute("upass",password);
+    session1.setAttribute("uemail",email);
+    String redirectURL = "http://54.201.229.49/FirstServlet3/Profile.jsp";
+	response.sendRedirect(redirectURL);
+	
+
+
+}finally{
+	
+}
+
+
+
+
+%>
+</body>
+</html>
